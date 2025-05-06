@@ -3,7 +3,6 @@ import path from 'path';
 import { glob } from 'glob';
 import { input } from '@inquirer/prompts';
 import { simpleGit } from 'simple-git';
-import process from 'process';
 
 interface DeveloperDetails {
   developerName: string;
@@ -132,24 +131,14 @@ async function main() {
 
   if (developerName !== '' && purpose !== '') {
     const status = await git.status();
-    // const stagedFiles = args.includes('--all')
-    //   ? glob.sync('src/**/*.{ts,tsx,jsx,js,css}')
-    //   : status.staged.filter(
-    //       (file) =>
-    //         /\.(ts|tsx|jsx|js|css)$/.test(file) && file !== 'copyright.ts'
-    //     );
-
     const stagedFiles = args.includes('--all')
-      ? glob.sync('{frontend,backend}/*/src/**/*.{ts,tsx,jsx,js,css}', {
-          nodir: true,
-        })
+      ? glob.sync('frontend/**/src/**/*.{ts,tsx,jsx,js,css}')
       : status.staged.filter(
           (file) =>
-            /\.(ts|tsx|jsx|js|css)$/.test(file) &&
-            file.includes(path.join('src', path.sep)) &&
-            !file.endsWith('copyright.ts')
+            /\.(ts|tsx|jsx|js|css)$/.test(file) && file !== 'copyright.ts'
         );
 
+    console.log('stagedFiles', stagedFiles);
     for (const file of stagedFiles) {
       const fullPath = path.resolve(file);
       if (!fs.existsSync(fullPath)) {
