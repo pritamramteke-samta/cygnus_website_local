@@ -126,7 +126,6 @@ async function addCopyrightToFile(
 }
 
 async function main() {
-    
   const args = process.argv.slice(2);
   const git = simpleGit();
   const { developerName, purpose } = await promptDeveloperDetails();

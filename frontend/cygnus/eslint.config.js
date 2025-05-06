@@ -20,7 +20,7 @@ export default [
       globals: globals.browser,
       parser: tsParser,
     },
-    
+
     plugins: {
       '@typescript-eslint': tseslint.plugin,
       'react-hooks': reactHooks,
