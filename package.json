@@ -7,7 +7,11 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint . --fix --ext .js,.jsx,.ts,.tsx",
     "format": "prettier ./frontend/cygnus/src --write",
-    "prepare": "husky"
+    "prepare": "husky",
+    "add-copyright": "tsx copyright.ts",
+    "commit": "node commit.mjs",
+    "commit:standard": "npm run add-copyright && git-cz",
+    "commit:merge": "git-cz"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +21,7 @@
     "@eslint/js": "^9.25.0",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
+    "commitizen": "^4.3.1",
     "eslint": "^9.25.0",
     "eslint-config-prettier": "^10.1.2",
     "eslint-plugin-react-hooks": "^5.2.0",
@@ -27,5 +32,13 @@
     "prettier": "3.5.3",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.30.1"
+  },
+  "dependencies": {
+    "@inquirer/prompts": "^7.5.0",
+    "glob": "^11.0.2",
+    "papaparse": "^5.5.2",
+    "path": "^0.12.7",
+    "simple-git": "^3.27.0",
+    "tsx": "^4.19.4"
   }
 }

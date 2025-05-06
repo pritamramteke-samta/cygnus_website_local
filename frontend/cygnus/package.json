@@ -8,12 +8,7 @@
     "build": "tsc -b && vite build",
     "preview": "vite preview",
     "lint": "eslint . --fix --ext .js,.jsx,.ts,.tsx",
-    "format": "prettier ./src --write",
-    "prepare": "husky",
-    "add-copyright": "tsx copyright.ts",
-    "commit": "node commit.mjs",
-    "commit:standard": "npm run add-copyright && git-cz",
-    "commit:merge": "git-cz"
+    "format": "prettier ./src --write"
   },
   "dependencies": {
     "@inquirer/prompts": "^7.5.0",
