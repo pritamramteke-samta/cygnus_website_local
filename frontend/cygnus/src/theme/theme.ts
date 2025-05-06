@@ -26,11 +26,11 @@ const theme = createTheme({
         lineHeight: '1.205',
       },
       h5: {
-        fontSize: rem(19.2), 
+        fontSize: rem(19.2),
         lineHeight: '1.205',
       },
       h6: {
-        fontSize: rem(13.333), 
+        fontSize: rem(13.333),
         lineHeight: '1.205',
       },
     },

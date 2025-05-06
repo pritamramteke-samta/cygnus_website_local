@@ -1,5 +1,4 @@
-import React from 'react'
-import Counter from './components/Counter'
+import Counter from './components/Counter';
 
 function App() {
   return (
@@ -7,7 +6,7 @@ function App() {
       <h1>Zustand Global State Example</h1>
       <Counter />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
