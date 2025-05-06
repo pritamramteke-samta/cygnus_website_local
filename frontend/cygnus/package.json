@@ -9,13 +9,23 @@
     "preview": "vite preview",
     "lint": "eslint . --fix --ext .js,.jsx,.ts,.tsx",
     "format": "prettier ./src --write",
-    "prepare": "husky"
+    "prepare": "husky",
+    "add-copyright": "tsx copyright.ts",
+    "commit": "node commit.mjs",
+    "commit:standard": "npm run add-copyright && git-cz",
+    "commit:merge": "git-cz"
   },
   "dependencies": {
+    "@inquirer/prompts": "^7.5.0",
     "@mantine/core": "^8.0.0",
     "@mantine/hooks": "^8.0.0",
+    "glob": "^11.0.2",
+    "papaparse": "^5.5.2",
+    "path": "^0.12.7",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "simple-git": "^3.27.0",
+    "tsx": "^4.19.4",
     "zustand": "^5.0.4"
   },
   "devDependencies": {
