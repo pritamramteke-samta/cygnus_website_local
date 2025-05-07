@@ -1,11 +1,19 @@
-import { createTheme, rem } from '@mantine/core';
+import { colorsTuple, createTheme, rem } from '@mantine/core';
 
 const theme = createTheme({
   /** Put your mantine theme override here */
-  fontFamily:
-    'Poppins, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol',
-  fontFamilyMonospace:
-    'SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace',
+  colors: {
+    // primary:primaryColor,
+    primaryLite: colorsTuple('#008F5E'),
+    primary: colorsTuple('#27624E'),
+    black: colorsTuple('#000000'),
+    white: colorsTuple('#ffffff'),
+    secondary: colorsTuple('#E36F34'),
+    greyLite: colorsTuple('#D4D4D4'),
+  },
+
+  fontFamily: 'Inter, sans-serif',
+  fontFamilyMonospace: 'Inter, monospace',
   headings: {
     fontWeight: '600',
     sizes: {

@@ -1,9 +1,3 @@
-#!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
-
-# Run format and lint
-npm run format
 npm run lint
-
-# Add all the changes
+npm run format
 git add .
