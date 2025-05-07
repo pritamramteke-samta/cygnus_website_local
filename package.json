@@ -7,11 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint . --fix --ext .js,.jsx,.ts,.tsx",
     "format": "prettier ./frontend/cygnus/src --write",
-    "prepare": "husky",
-    "add-copyright": "tsx copyright.ts",
-    "commit": "node commit.mjs",
-    "commit:standard": "npm run add-copyright && git-cz",
-    "commit:merge": "git-cz"
+    "prepare": "husky"
   },
   "keywords": [],
   "author": "",
