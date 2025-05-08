@@ -4,16 +4,16 @@ const theme = createTheme({
   /** Put your mantine theme override here */
   colors: {
     // primary:primaryColor,
-    primaryLite: colorsTuple('#008F5E'),
     primary: colorsTuple('#27624E'),
+    primaryLite: colorsTuple('#008F5E'),
     black: colorsTuple('#000000'),
     white: colorsTuple('#ffffff'),
     secondary: colorsTuple('#E36F34'),
     greyLite: colorsTuple('#D4D4D4'),
   },
 
-  fontFamily: 'Inter, sans-serif',
-  fontFamilyMonospace: 'Inter, monospace',
+  fontFamily: 'Calibri, sans-serif',
+  fontFamilyMonospace: 'Calibri, monospace',
   headings: {
     fontWeight: '600',
     sizes: {

@@ -109,7 +109,7 @@ const NavBar = () => {
             extraStyles={{
               borderColor: 'var(--mantine-color-greyLite-0)',
             }}
-            color={'var(--mantine-color-primaryLite-9)'}
+            color={'var(--mantine-color-primaryLite-0)'}
             title='Contact us'
             variant='outline'
           />

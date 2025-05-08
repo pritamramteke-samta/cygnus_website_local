@@ -1,0 +1,4 @@
+// _functions.scss
+@function scale-px($px, $design-width: 1440) {
+  @return calc(($px / $design-width) * 100vw);
+}

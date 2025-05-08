@@ -3,7 +3,7 @@ import { Button } from '@mantine/core';
 const CButton = ({
   title = '',
   variant = 'filled',
-  color = 'var(--mantine-color-primary-9)',
+  color = 'var(--mantine-color-primary-0)',
   extraStyles = {},
 }) => {
   return (

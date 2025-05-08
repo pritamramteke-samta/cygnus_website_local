@@ -1,0 +1,7 @@
+// main.scss
+@use './helpers/functions'; // or @import './helpers/functions'; if you're using older Sass
+
+// Example usage globally
+:root {
+  --spacing-large: #{functions.scale-px(64)};
+}
