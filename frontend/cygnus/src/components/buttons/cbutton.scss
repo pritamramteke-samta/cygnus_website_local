@@ -1,0 +1,77 @@
+@use '../../styles/helpers/functions' as fn;
+
+:root {
+  --btn-color: #228be6;
+  --btn-bg: white;
+  --btn-border: #228be6;
+  --btn-radius: fn.scale-px(100);
+  --btn-padding: 10px 16px;
+  --btn-font: 'Inter', sans-serif;
+}
+
+.btn {
+  font-family: var(--btn-font);
+  font-size: fn.scale-px(14);
+  padding: fn.scale-px(10) fn.scale-px(16);
+  border-radius: fn.scale-px(100);
+  border: fn.scale-px(1) solid transparent;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+/* Filled Variant */
+.btn.filled {
+  background-color: #27624e;
+  color: white;
+  border-color: #27624e;
+}
+.btn.filled:hover {
+  background-color: fn.darken-shade(#27624e, 2);
+}
+.btn.filled:active {
+  background-color: fn.darken-shade(#27624e, 5);
+}
+
+/* Outline Variant */
+.btn.outline {
+  background-color: transparent;
+  color: #008f5e;
+  border: 1px solid #008f5e;
+}
+.btn.outline:hover {
+  background-color: #008f5e02;
+}
+.btn.outline:active {
+  background-color: #008f5e08;
+  border-color: #008f5e;
+}
+
+/* Light Variant */
+.btn.light {
+  background-color: #e7f5ff;
+  color: var(--btn-color);
+  border: 1px solid transparent;
+}
+.btn.light:hover {
+  background-color: #d0ebff;
+}
+.btn.light:active {
+  background-color: #a5d8ff;
+}
+
+/* Subtle Variant */
+.btn.subtle {
+  background-color: transparent;
+  color: var(--btn-color);
+  border: 1px solid transparent;
+}
+.btn.subtle:hover {
+  background-color: rgba(34, 139, 230, 0.05);
+}
+.btn.subtle:active {
+  background-color: rgba(34, 139, 230, 0.1);
+}

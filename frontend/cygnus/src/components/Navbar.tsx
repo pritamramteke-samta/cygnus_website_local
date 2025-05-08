@@ -1,8 +1,8 @@
-import { Box, Group, Image } from '@mantine/core';
+import { Box, Group } from '@mantine/core';
 import { NavLink } from 'react-router-dom';
 import { DownIc, Logo } from '../assets';
 import CButton from './buttons/CButton';
-import './Navbar.css';
+import './navbar.scss';
 import { useCallback, useEffect, useRef, useState } from 'react';
 
 const NavBar = () => {
@@ -35,29 +35,30 @@ const NavBar = () => {
 
   return (
     <>
-      <div style={{ paddingTop: `${navHeight}px` }} />
+      <div style={{ paddingTop: `calc((${navHeight} / 1440) * 100vw)` }} />
       <Box
         ref={navRef}
         className='nav-bar'
         style={{
+          transform: showNav ? 'translateY(0)' : 'translateY(-100%)',
           position: 'fixed',
           top: 0,
           width: '100%',
           zIndex: 999,
           transition: 'transform 0.3s ease',
-          transform: showNav ? 'translateY(0)' : 'translateY(-100%)',
         }}
       >
-        <Image
+        <img
           src={Logo}
           alt='Logo'
-          style={{
-            width: 157,
-            height: 40,
-          }}
+          className='nav-logo'
+          //         style={{
+          //           width: 'calc((157 / 1440) * 100vw)',
+          // height:  'calc((40 / 1440) * 100vw)'
+          //         }}
         />
 
-        <Group gap={16} className='nav-link-cont'>
+        <Group gap={'calc((16 / 1440) * 100vw)'} className='nav-link-cont'>
           <NavLink
             to='/'
             className={({ isActive }) =>
@@ -67,32 +68,33 @@ const NavBar = () => {
             Home
           </NavLink>
           <NavLink
-            to='/products'
-            className={({ isActive }) =>
-              isActive ? 'nav-link-active' : 'nav-link'
-            }
-          >
-            <Group gap={8}>
-              Products <img width={16} height={16} src={DownIc} alt='Logo' />
-            </Group>
-          </NavLink>
-          <NavLink
-            to='/services'
-            className={({ isActive }) =>
-              isActive ? 'nav-link-active' : 'nav-link'
-            }
-          >
-            <Group gap={8}>
-              Services <img width={16} height={16} src={DownIc} alt='Logo' />
-            </Group>
-          </NavLink>
-          <NavLink
             to='/aboutus'
             className={({ isActive }) =>
               isActive ? 'nav-link-active' : 'nav-link'
             }
           >
             About Us
+          </NavLink>
+
+          <NavLink
+            to='/services'
+            className={({ isActive }) =>
+              isActive ? 'nav-link-active' : 'nav-link'
+            }
+          >
+            <Group gap={'calc((8 / 1440) * 100vw)'}>
+              Services <img className='nav-btm-arr' src={DownIc} alt='Logo' />
+            </Group>
+          </NavLink>
+          <NavLink
+            to='/products'
+            className={({ isActive }) =>
+              isActive ? 'nav-link-active' : 'nav-link'
+            }
+          >
+            <Group gap={'calc((8 / 1440) * 100vw)'}>
+              Products <img className='nav-btm-arr' src={DownIc} alt='Logo' />
+            </Group>
           </NavLink>
 
           <NavLink

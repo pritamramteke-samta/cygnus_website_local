@@ -2,3 +2,8 @@
 @function scale-px($px, $design-width: 1440) {
   @return calc(($px / $design-width) * 100vw);
 }
+
+// Function to darken a color by a given percentage
+@function darken-shade($color, $percentage: 10) {
+  @return darken($color, $percentage);
+}

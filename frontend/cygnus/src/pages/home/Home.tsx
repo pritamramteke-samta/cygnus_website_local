@@ -1,6 +1,6 @@
 import { Box, Container } from '@mantine/core';
 import { Carousel } from '@mantine/carousel';
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import Autoplay from 'embla-carousel-autoplay';
 import './home.scss';
 import CButton from '../../components/buttons/CButton';
@@ -8,16 +8,8 @@ import CButton from '../../components/buttons/CButton';
 const Home = () => {
   const videos = ['/videos/vid1.mp4', '/videos/vid2.mp4', '/videos/vid3.mp4'];
 
-  const autoplay = useRef(Autoplay({ delay: 2000 }));
+  const autoplay = useRef(Autoplay({ delay: 3000 }));
   const carouselRef = useRef(null);
-
-  function scaleFromFigma(designValue, designWidth = 1440) {
-    const screenWidth = window.innerWidth;
-    return (designValue / designWidth) * screenWidth;
-  }
-  useEffect(() => {
-    console.log('pxToRem', scaleFromFigma(64));
-  }, []);
 
   return (
     <Container fluid p={0}>
@@ -26,9 +18,9 @@ const Home = () => {
         classNames={{ indicator: 'indicator', indicators: 'indicators' }}
         emblaOptions={{ loop: true, align: 'start' }}
         // withIndicators
-        height={800}
+        height={'calc((800 / 1440) * 100vw)'}
         slideSize='100%'
-        controlSize={50}
+        // controlSize={50}
         withControls={false}
         plugins={[autoplay.current]}
         onMouseEnter={autoplay.current.stop}
@@ -39,25 +31,28 @@ const Home = () => {
           <Carousel.Slide key={index}>
             <Box className='carousel-box'>
               <div className='hero-sec-1'>
-                <div
+                {/* <div
                   className={'sm-txt-1'}
                   style={{ textTransform: 'uppercase' }}
                 >
                   Highlighted feature
-                </div>
+                </div> */}
 
-                <div className={'big-txt-1'}>
+                <Box className={'big-txt-1'}>
                   Trusted advisor to deliver
                   <br />
                   Risk & Regulatory
                   <br />
                   Compliance Solutions
-                </div>
-                <div className='sm-txt-2' style={{ marginTop: 32 }}>
+                </Box>
+                <Box
+                  className='sm-txt-2'
+                  style={{ marginTop: 'calc((32 / 1440) * 100vw)' }}
+                >
                   Helping you design and implement success!
-                </div>
+                </Box>
 
-                <div className='btn-cont'>
+                <Box className='btn-cont'>
                   <CButton
                     title='Get a demo'
                     color='var(--mantine-color-primaryLite-0)'
@@ -66,8 +61,12 @@ const Home = () => {
                     title='Contact us'
                     color='var(--mantine-color-white-0)'
                     variant='outline'
+                    extraStyles={{
+                      color: '#fff',
+                      borderColor: '#fff',
+                    }}
                   />
-                </div>
+                </Box>
                 <div className='btm-tabs-cont'>
                   <div className='btm-tab-cont'>
                     <div
@@ -78,7 +77,7 @@ const Home = () => {
                     </div>
                     <div
                       className={'sm-txt-1'}
-                      style={{ lineHeight: '25.6px' }}
+                      style={{ lineHeight: 'calc((25.6 / 1440) * 100vw)' }}
                     >
                       Galley of type and scrambled it to make a type specimen
                       book.
@@ -92,11 +91,11 @@ const Home = () => {
                       className='btm-tab-title'
                       style={{ lineHeight: '120%' }}
                     >
-                      Open Compliance Suite
+                      Technology Consulting
                     </div>
                     <div
                       className={'sm-txt-1'}
-                      style={{ lineHeight: '25.6px' }}
+                      style={{ lineHeight: 'calc((25.6 / 1440) * 100vw)' }}
                     >
                       Galley of type and scrambled it to make a type specimen
                       book.
@@ -123,9 +122,9 @@ const Home = () => {
         ))}
       </Carousel>
 
-      {/* <div
-        style={{ backgroundColor: 'red', height: '40vh', marginBottom: 20 }}
-      /> */}
+      <div
+        style={{ backgroundColor: '#ffffff', height: '40vh', marginBottom: 20 }}
+      />
     </Container>
   );
 };
