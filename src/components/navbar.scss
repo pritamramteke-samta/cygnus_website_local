@@ -28,7 +28,7 @@
 
 .nav-link {
   color: var(--mantine-color-black-0);
-  // color: var(--mantine-color-wh-0);
+  font-weight: 400;
   font-size: fn.scale-px(14);
   text-decoration: none;
   border-bottom: fn.scale-px(3) solid rgba(0, 0, 0, 0);
@@ -40,4 +40,10 @@
   text-decoration: none;
   font-weight: 600;
   border-bottom: fn.scale-px(3) solid var(--mantine-color-primaryLite-0);
+}
+
+.btn-cont {
+  display: flex;
+  flex-direction: row;
+  gap: fn.scale-px(10);
 }

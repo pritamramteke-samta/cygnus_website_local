@@ -1,30 +1,34 @@
 import './cbutton.scss';
+import colors from '../../constants/colors';
+import { Button } from '@mantine/core';
 
 const CButton = ({
   title = '',
   variant = 'filled',
-  // color = 'var(--mantine-color-primary-0)',
+  color = colors.primary,
   extraStyles = {},
+  padHor = 'calc((16 / 1440) * 100vw)',
+  fontSize = 'calc((14 / 1440) * 100vw)',
+  btnHeight = 'calc((44 / 1440) * 100vw)',
   // size='42px',
 }) => {
   return (
     <>
-      {/* <Button
-      p={'md'}
-      variant={variant}
-      // size={size}
-      color={color}
-      radius='xl'
-      style={{
-        ...extraStyles,
-      }}
-    >
-      {title}
-    </Button> */}
-
-      <button style={{ ...extraStyles }} className={`btn ${variant}`}>
+      <Button
+        variant={variant}
+        color={color}
+        style={{
+          borderRadius: 'calc((100 / 1440) * 100vw)',
+          paddingLeft: padHor,
+          paddingRight: padHor,
+          fontSize: fontSize,
+          fontWeight: 500,
+          height: btnHeight,
+          ...extraStyles,
+        }}
+      >
         {title}
-      </button>
+      </Button>
     </>
   );
 };

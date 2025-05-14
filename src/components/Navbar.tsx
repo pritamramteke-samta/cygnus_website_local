@@ -4,6 +4,7 @@ import { DownIc, Logo } from '../assets';
 import CButton from './buttons/CButton';
 import './navbar.scss';
 import { useCallback, useEffect, useRef, useState } from 'react';
+import colors from '../constants/colors';
 
 const NavBar = () => {
   const [navHeight, setNavHeight] = useState(0);
@@ -35,7 +36,7 @@ const NavBar = () => {
 
   return (
     <>
-      <div style={{ paddingTop: `calc((${navHeight} / 1440) * 100vw)` }} />
+      {/* <div style={{ paddingTop: `calc((${navHeight} / 1440) * 100vw)` }} /> */}
       <Box
         ref={navRef}
         className='nav-bar'
@@ -106,15 +107,16 @@ const NavBar = () => {
             Resources
           </NavLink>
         </Group>
-        <Group>
+        <Group gap={'calc((16 / 1440) * 100vw)'}>
           <CButton
             extraStyles={{
               borderColor: 'var(--mantine-color-greyLite-0)',
             }}
-            color={'var(--mantine-color-primaryLite-0)'}
+            color={colors.primaryLite}
             title='Contact us'
             variant='outline'
           />
+
           <CButton title='Get a demo' />
         </Group>
       </Box>
