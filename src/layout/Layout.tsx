@@ -1,12 +1,14 @@
 import { Container } from '@mantine/core';
-const Layout = ({ children }) => {
+import type React from 'react';
+import type { ReactNode } from 'react';
+
+interface LayoutProps {
+  children: ReactNode;
+}
+
+const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <Container
-      fluid
-      p={0}
-      h={'100vh'}
-      // w={'1440px'}
-    >
+    <Container fluid p={0} h={'100vh'}>
       {children}
     </Container>
   );

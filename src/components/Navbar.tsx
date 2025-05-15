@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { DownIc, Logo } from '../assets';
 import CButton from './buttons/CButton';
 import './navbar.scss';
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { memo, useCallback, useEffect, useRef, useState } from 'react';
 
 const NavBar = () => {
   const [navHeight, setNavHeight] = useState(0);
@@ -115,4 +115,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default memo(NavBar);

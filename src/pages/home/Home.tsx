@@ -138,11 +138,6 @@ const Home = () => {
                 </div> */}
 
                 <Box className={'big-txt-1'}>
-                  {/* Trusted advisor to deliver
-                  <br />
-                  Risk & Regulatory
-                  <br />
-                  Compliance Solutions */}
                   {/* {slide.title} */}
                   {slide.title.split('|||').map((line, idx) => (
                     <Box key={idx}>{line}</Box>
@@ -152,7 +147,6 @@ const Home = () => {
                   className='sm-txt-2'
                   style={{ marginTop: 'calc((32 / 1440) * 100vw)' }}
                 >
-                  {/* Helping you design and implement success! */}
                   {slide.subtitle}
                 </Box>
 
