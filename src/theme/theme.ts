@@ -7,13 +7,11 @@ const theme = createTheme({
     primary: colorsTuple('#27624E'),
     primaryLite: colorsTuple('#008F5E'),
     primaryExtraLight: colorsTuple('#59D39F'),
-    primaryDark: colorsTuple('#02261A'),
     black: colorsTuple('#000000'),
     white: colorsTuple('#ffffff'),
     secondary: colorsTuple('#E36F34'),
     greyLite: colorsTuple('#D4D4D4'),
     grey: colorsTuple('#4D525F'),
-    greyMid: colorsTuple('#E7E7E8'),
   },
 
   fontFamily: 'Inter, sans-serif',
