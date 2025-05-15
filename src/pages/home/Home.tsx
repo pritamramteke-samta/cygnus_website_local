@@ -12,6 +12,13 @@ import {
   TechConsultW,
 } from '../../assets';
 import { IoChevronDown } from 'react-icons/io5';
+import LogoScroller from '../../components/LogoScroller';
+import TrustSection from '../../layout/TrustSection';
+import ServicesCards from '../../components/Cards/ServicesCards';
+import StackedCards from '../../components/Cards/StackedCards';
+import StatsSection from '../../layout/StatsSection';
+import TestimonialsSection from '../../layout/TestimonialsSection';
+import BlogSection from '../../layout/BlogCard';
 
 interface AccordionProps {
   value: string;
@@ -261,7 +268,15 @@ const Home = () => {
           );
         })}
       </Box>
-      <div style={{ backgroundColor: '#ffffff', height: '40vh' }} />
+      {/* <div style={{ backgroundColor: '#ffffff', height: '40vh' }} /> */}
+      <LogoScroller />
+      <TrustSection />
+      <ServicesCards />
+      <StackedCards />
+
+      <StatsSection />
+      <TestimonialsSection />
+      <BlogSection />
 
       <Box className='footer'>
         <Box className='accordion-cont'>
