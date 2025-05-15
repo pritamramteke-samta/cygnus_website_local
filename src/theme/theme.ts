@@ -13,6 +13,7 @@ const theme = createTheme({
     secondary: colorsTuple('#E36F34'),
     greyLite: colorsTuple('#D4D4D4'),
     grey: colorsTuple('#4D525F'),
+    greyMid: colorsTuple('#E7E7E8'),
   },
 
   fontFamily: 'Inter, sans-serif',

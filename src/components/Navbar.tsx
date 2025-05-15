@@ -4,7 +4,6 @@ import { DownIc, Logo } from '../assets';
 import CButton from './buttons/CButton';
 import './navbar.scss';
 import { useCallback, useEffect, useRef, useState } from 'react';
-import colors from '../constants/colors';
 
 const NavBar = () => {
   const [navHeight, setNavHeight] = useState(0);
@@ -41,7 +40,7 @@ const NavBar = () => {
         ref={navRef}
         className='nav-bar'
         style={{
-          transform: showNav ? 'translateY(0)' : 'translateY(-100%)',
+          transform: showNav ? 'translateY(0)' : 'translateY(-101%)',
           position: 'fixed',
           top: 0,
           width: '100%',
@@ -112,7 +111,7 @@ const NavBar = () => {
             extraStyles={{
               borderColor: 'var(--mantine-color-greyLite-0)',
             }}
-            color={colors.primaryLite}
+            color={'var(--mantine-color-primaryLite-0)'}
             title='Contact us'
             variant='outline'
           />

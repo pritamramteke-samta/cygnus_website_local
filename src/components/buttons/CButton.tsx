@@ -1,11 +1,9 @@
-import './cbutton.scss';
-import colors from '../../constants/colors';
 import { Button } from '@mantine/core';
 
 const CButton = ({
   title = '',
   variant = 'filled',
-  color = colors.primary,
+  color = 'var(--mantine-color-primary-0)',
   extraStyles = {},
   padHor = 'calc((16 / 1440) * 100vw)',
   fontSize = 'calc((14 / 1440) * 100vw)',

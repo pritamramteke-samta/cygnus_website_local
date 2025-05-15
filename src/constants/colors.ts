@@ -8,4 +8,5 @@ export default {
   secondary: '#E36F34',
   greyLite: '#D4D4D4',
   grey: '#4D525F',
+  greyMid: '#E7E7E8',
 };

@@ -11,7 +11,6 @@
 }
 
 .big-txt-1 {
-  // font-size: 64px;
   font-size: fn.scale-px(64);
   color: var(--mantine-color-white-0);
   font-weight: 600;
@@ -31,19 +30,26 @@
 .indicator {
   width: fn.scale-px(16);
   height: fn.scale-px(4);
-  transition: width 250ms ease;
-  outline: fn.scale-px(2) solid var(--mantine-color-greyLite-0);
-  outline-offset: fn.scale-px(-2);
-  &[data-active] {
-    width: fn.scale-px(48);
-  }
+  transition: width 350ms ease;
+  border-radius: fn.scale-px(100);
+  background-color: rgba(217, 217, 217, 0.5);
+}
+
+.indicator-active {
+  @extend .indicator;
+  width: fn.scale-px(48);
+  background-color: rgb(217, 217, 217, 1);
 }
 
 .indicators {
-  bottom: fn.scale-px(185) !important;
+  position: absolute;
+  z-index: 200;
+  width: fn.scale-px(92);
+  height: fn.scale-px(4);
+  top: fn.scale-px(600);
+  left: fn.scale-px(100);
   display: flex;
-  justify-content: flex-start;
-  padding-inline: fn.scale-px(100);
+  gap: fn.scale-px(6);
 }
 
 .carousel-box {
@@ -58,7 +64,9 @@
   position: absolute;
   top: fn.scale-px(183);
   left: fn.scale-px(100);
+  right: fn.scale-px(100);
   z-index: 10; /* or higher */
+  // width: fn.scale-px(924);
 }
 
 .btm-tabs-cont {
@@ -165,7 +173,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: fn.scale-px(79) fn.scale-px(100) fn.scale-px(70) fn.scale-px(100);
+  padding: fn.scale-px(79) fn.scale-px(100) fn.scale-px(27) fn.scale-px(100);
 }
 
 .accordion-title {
@@ -191,7 +199,7 @@
   width: 100%;
   border: fn.scale-px(2) solid transparent;
   &[data-active='true'] {
-    border-color: var(--mantine-color-primaryLite-0); // or any color you want
+    border-color: var(--mantine-color-primary-0); // or any color you want
   }
 }
 
@@ -276,11 +284,13 @@
   vertical-align: middle;
   padding: 0px 0px;
   color: var(--mantine-color-grey-0);
+  width: fn.scale-px(227);
 }
 
 .footer-menu-cont {
   padding-top: fn.scale-px(24);
   padding-bottom: fn.scale-px(24);
+  margin-bottom: fn.scale-px(40);
 }
 
 .footer-logo {
@@ -288,8 +298,14 @@
   height: fn.scale-px(40);
   margin-bottom: fn.scale-px(16);
 }
+.footer-logo-para {
+  font-size: fn.scale-px(16);
+  line-height: 150%;
+  color: rgba(255, 255, 255, 0.8);
+}
 
 .footer-menu-head {
+  font-family: 'Manrope', sans-serif;
   font-size: fn.scale-px(20);
   font-weight: 700;
   line-height: 120%;
@@ -298,9 +314,27 @@
 }
 
 .footer-menu-txt {
+  font-family: 'Manrope', sans-serif;
   font-size: fn.scale-px(16);
   line-height: 150%;
-  // color: var(--mantine-color-white-0);
-  color: rgba(255, 255, 255, 0.8); /* 80% opacity */
-  margin-bottom: fn.scale-px(12);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-br {
+  height: fn.scale-px(1);
+  width: 100%;
+  background-color: rgba(231, 231, 232, 0.452);
+  margin-bottom: fn.scale-px(32);
+}
+.footer-end-cont {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.footer-end-left-cont {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: fn.scale-px(24);
 }

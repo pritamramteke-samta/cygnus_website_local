@@ -4,7 +4,6 @@ import { useRef, useState } from 'react';
 import Autoplay from 'embla-carousel-autoplay';
 import './home.scss';
 import CButton from '../../components/buttons/CButton';
-import colors from '../../constants/colors';
 import {
   FooterLogo,
   LegalDoc,
@@ -14,37 +13,72 @@ import {
 } from '../../assets';
 import { IoChevronDown } from 'react-icons/io5';
 
-const groceries = [
+interface AccordionProps {
+  value: string;
+  description: string;
+}
+
+const questions = [
   {
-    emoji: '🍎',
-    value: 'Apples',
+    value: 'What is CashEase?',
     description:
-      'Crisp and refreshing fruit. Apples are known for their versatility and nutritional benefits. They come in a variety of flavors and are great for snacking, baking, or adding to salads.',
+      'CashEase is an e-wallet app that allows you to store money, make payments, and perform other financial transactions electronically through your mobile device.',
   },
   {
-    emoji: '🍌',
-    value: 'Bananas',
+    value: 'How do I download and install the CashEase app?',
     description:
-      'Naturally sweet and potassium-rich fruit. Bananas are a popular choice for their energy-boosting properties and can be enjoyed as a quick snack, added to smoothies, or used in baking.',
+      'To download and install the CashEase app, visit the Google Play Store for Android devices or the Apple App Store for iOS devices. Search for "CashEase" in the respective store, then tap "Install" or "Get" to download the app. Once installed, open the app and follow the on-screen instructions to set up your account.',
   },
   {
-    emoji: '🥦',
-    value: 'Broccoli',
+    value: 'Can I transfer money from CashEase to my bank account?',
     description:
-      'Nutrient-packed green vegetable. Broccoli is packed with vitamins, minerals, and fiber. It has a distinct flavor and can be enjoyed steamed, roasted, or added to stir-fries.',
+      "Yes, CashEase allows users to transfer funds from their e-wallet to a linked bank account. To do this, open the CashEase app, navigate to the transfer or withdrawal section, enter the amount you wish to transfer, select your linked bank account, and confirm the transaction. Please note that transfer times may vary depending on your bank's processing times.",
+  },
+  {
+    value: 'Is CashEase compatible with all types of devices?',
+    description:
+      "CashEase is compatible with most modern smartphones and tablets running up-to-date operating systems. For Android devices, ensure you have Android 8.1 or higher, and for Apple devices, iOS 14 or higher is recommended. It's advisable to keep your device's operating system updated to the latest version for optimal performance and security.",
+  },
+  {
+    value: 'How can I contact CashEase customer support if I encounter issues?',
+    description:
+      'If you encounter any issues with the CashEase app, you can contact their customer support team via email at support@cashe.co.in or by calling their customer care number at +91 8828553333. They are available to assist you with any inquiries or problems you may have.',
   },
 ];
 
 const Home = () => {
   const videos = ['/videos/vid1.mp4', '/videos/vid2.mp4', '/videos/vid3.mp4'];
 
+  const carouselData = [
+    {
+      title:
+        'Regulators are now questioning|||what’s behind your transaction monitoring logic.',
+      subtitle:
+        'Model transparency and validation aren’t optional, they’re expected.',
+      video: 'videos/vid1.mp4',
+    },
+    {
+      title:
+        'Tech-enabled compliance|||doesn’t just speed up reviews, it strengthens them.',
+      subtitle: 'Centralized, traceable decisions reduce risk and scrutiny.',
+      video: '/videos/vid2.mp4',
+    },
+    {
+      title: 'KYC is no longer static,|||it must evolve with your|||customers.',
+      subtitle:
+        'Stale profiles and outdated risk ratings are red flags waiting to be exposed.',
+      video: '/videos/vid3.mp4',
+    },
+  ];
+
   const autoplay = useRef(Autoplay({ delay: 3000 }));
   const carouselRef = useRef(null);
   const [tabHover, settabHover] = useState(false);
   const [tabHover2, settabHover2] = useState(false);
-  const [value, setValue] = useState<string[]>([]);
+  const [value, setValue] = useState<string[]>([questions[0].value]);
+  const [activeIndex, setactiveIndex] = useState(0);
 
-  const AccordionLabel = ({ value }) => {
+  const AccordionLabel = ({ value }: AccordionProps) => {
     return (
       <Group wrap='nowrap'>
         <div className='accordion-item-title'>{value}</div>
@@ -52,7 +86,7 @@ const Home = () => {
     );
   };
 
-  const AccordionDescp = ({ description }) => {
+  const AccordionDescp = ({ description }: AccordionProps) => {
     return (
       <Group wrap='nowrap'>
         <div className='accordion-item-title'>{description}</div>
@@ -60,7 +94,7 @@ const Home = () => {
     );
   };
 
-  const items = groceries.map((item) => (
+  const items = questions.map((item) => (
     <Accordion.Item
       key={item.value}
       value={item.value}
@@ -80,22 +114,22 @@ const Home = () => {
     <Container fluid p={0}>
       <Carousel
         ref={carouselRef}
-        classNames={{ indicator: 'indicator', indicators: 'indicators' }}
+        onSlideChange={(slideIndx) => {
+          setactiveIndex(slideIndx);
+        }}
         emblaOptions={{ loop: true, align: 'start' }}
-        // withIndicators
         height={'calc((800 / 1440) * 100vw)'}
         slideSize='100%'
-        // controlSize={50}
         withControls={false}
         plugins={[autoplay.current]}
         onMouseEnter={autoplay.current.stop}
         onMouseLeave={() => autoplay.current.play()}
       >
         {' '}
-        {videos.map((src, index) => (
+        {carouselData.map((slide, index) => (
           <Carousel.Slide key={index}>
             <Box className='carousel-box'>
-              <div className='hero-sec-1'>
+              <Box className='hero-sec-1'>
                 {/* <div
                   className={'sm-txt-1'}
                   style={{ textTransform: 'uppercase' }}
@@ -104,24 +138,32 @@ const Home = () => {
                 </div> */}
 
                 <Box className={'big-txt-1'}>
-                  Trusted advisor to deliver
+                  {/* Trusted advisor to deliver
                   <br />
                   Risk & Regulatory
                   <br />
-                  Compliance Solutions
+                  Compliance Solutions */}
+                  {/* {slide.title} */}
+                  {slide.title.split('|||').map((line, idx) => (
+                    <Box key={idx}>{line}</Box>
+                  ))}
                 </Box>
                 <Box
                   className='sm-txt-2'
                   style={{ marginTop: 'calc((32 / 1440) * 100vw)' }}
                 >
-                  Helping you design and implement success!
+                  {/* Helping you design and implement success! */}
+                  {slide.subtitle}
                 </Box>
 
                 <Box className='btn-cont'>
-                  <CButton title='Get a demo' color={colors.primaryLite} />
+                  <CButton
+                    title='Get a demo'
+                    color={'var(--mantine-color-primaryLite-0)'}
+                  />
                   <CButton
                     title='Contact us'
-                    color={colors.white}
+                    color={'var(--mantine-color-white-0)'}
                     variant='outline'
                     extraStyles={{
                       // color: '#fff',
@@ -129,8 +171,8 @@ const Home = () => {
                     }}
                   />
                 </Box>
-                <div className='btm-tabs-cont'>
-                  <div
+                <Box className='btm-tabs-cont'>
+                  <Box
                     className='btm-tab-cont-1'
                     onMouseEnter={() => settabHover(true)}
                     onMouseLeave={() => settabHover(false)}
@@ -162,62 +204,69 @@ const Home = () => {
                         Know more{'>'}
                       </div>
                     </div>
-                  </div>
-                  <div
+                  </Box>
+                  <Box
                     className='btm-tab-cont-2'
                     onMouseEnter={() => settabHover2(true)}
                     onMouseLeave={() => settabHover2(false)}
                   >
-                    <div className='btm-tab-img-cont'>
+                    <Box className='btm-tab-img-cont'>
                       <img
                         src={tabHover2 ? TechConsultW : TechConsult}
                         className='btm-tab-img'
                       />
-                    </div>
-                    <div className='btm-tab-para-cont'>
-                      <div
+                    </Box>
+                    <Box className='btm-tab-para-cont'>
+                      <Box
                         className='btm-tab-title'
                         style={{ lineHeight: '120%' }}
                       >
                         Technology Consulting
-                      </div>
-                      <div
+                      </Box>
+                      <Box
                         className={'sm-txt-1'}
                         style={{ lineHeight: 'calc((25.6 / 1440) * 100vw)' }}
                       >
                         Galley of type and scrambled it to make a type specimen
                         book.
-                      </div>
-                      <div
+                      </Box>
+                      <Box
                         className={'sm-txt-1'}
                         style={{ lineHeight: '150%' }}
                       >
                         Know more{'>'}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* <div className="video-wrapper"> */}
+                      </Box>
+                    </Box>
+                  </Box>
+                </Box>
+              </Box>
 
               <video
                 muted
                 playsInline
                 autoPlay={true}
                 loop
-                src={src}
+                src={slide.video}
                 width='100%'
                 height='100%'
                 className='video'
               />
-              <div className='video-overlay'></div>
-              {/* </div> */}
+              <Box className='video-overlay'></Box>
             </Box>
           </Carousel.Slide>
         ))}
       </Carousel>
 
+      <Box className='indicators'>
+        {videos.map((_, index) => {
+          return (
+            <Box
+              className={`${activeIndex === index ? 'indicator-active' : 'indicator'}`}
+              key={index}
+            />
+          );
+        })}
+      </Box>
       <div style={{ backgroundColor: '#ffffff', height: '40vh' }} />
 
       <Box className='footer'>
@@ -233,7 +282,6 @@ const Home = () => {
             onChange={setValue}
             classNames={{
               chevron: 'chevron',
-              // item:'custom-item'
             }}
             chevron={<IoChevronDown className={'icon'} />}
           >
@@ -275,6 +323,12 @@ const Home = () => {
         <Grid w={'100%'} className='footer-menu-cont'>
           <Grid.Col span={6}>
             <img src={FooterLogo} className='footer-logo' />
+            <Box className='footer-logo-para'>
+              Monks Pay offers secure, seamless, and
+              <br />
+              fee-free payments for effortless global
+              <br /> transactions.
+            </Box>
           </Grid.Col>
           <Grid.Col span={2}>
             <Box className='footer-menu-head'>Services</Box>
@@ -299,6 +353,17 @@ const Home = () => {
             <Box className='footer-menu-txt'>404</Box>
           </Grid.Col>
         </Grid>
+
+        <Box className='footer-br' />
+        <Box className='footer-end-cont'>
+          <Box className='footer-end-left-cont'>
+            <Box className='footer-menu-txt'>Built in Framer</Box>
+            <Box className='footer-menu-txt'>Terms and Conditions</Box>
+          </Box>
+          <Box className='footer-menu-txt'>
+            2024 © Design Monks. All rights reserved.
+          </Box>
+        </Box>
       </Box>
     </Container>
   );
