@@ -48,15 +48,7 @@ const NavBar = () => {
           transition: 'transform 0.3s ease',
         }}
       >
-        <img
-          src={Logo}
-          alt='Logo'
-          className='nav-logo'
-          //         style={{
-          //           width: 'calc((157 / 1440) * 100vw)',
-          // height:  'calc((40 / 1440) * 100vw)'
-          //         }}
-        />
+        <img src={Logo} alt='Logo' className='nav-logo' />
 
         <Group gap={'calc((16 / 1440) * 100vw)'} className='nav-link-cont'>
           <NavLink

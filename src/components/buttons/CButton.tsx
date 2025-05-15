@@ -1,4 +1,5 @@
 import { Button } from '@mantine/core';
+import { memo } from 'react';
 
 const CButton = ({
   title = '',
@@ -8,7 +9,6 @@ const CButton = ({
   padHor = 'calc((16 / 1440) * 100vw)',
   fontSize = 'calc((14 / 1440) * 100vw)',
   btnHeight = 'calc((44 / 1440) * 100vw)',
-  // size='42px',
 }) => {
   return (
     <>
@@ -31,4 +31,4 @@ const CButton = ({
   );
 };
 
-export default CButton;
+export default memo(CButton);
