@@ -1,4 +1,6 @@
-@use '../styles/helpers/functions' as fn;
+// @use '../styles/helpers/functions' as fn;
+
+@use '@styles/helpers/functions' as fn;
 
 .nav-bar {
   background-color: var(--mantine-color-white-0);
@@ -9,13 +11,22 @@
   align-items: center;
   padding: fn.scale-px(16);
   box-shadow: 0 fn.scale-px(2) fn.scale-px(4) fn.scale-px(-1) rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  transition: transform 0.3s ease;
+  transform: translateY(0);
+}
+
+.nav-bar-on-scroll {
+  @extend .nav-bar;
+  transform: translateY(-101%);
 }
 
 .nav-logo {
   width: fn.scale-px(157);
   height: fn.scale-px(40);
-  // width: calc((157 / 1440) * 100vw);
-  // height:  calc((40 / 1440) * 100vw);
 }
 
 .nav-btm-arr {

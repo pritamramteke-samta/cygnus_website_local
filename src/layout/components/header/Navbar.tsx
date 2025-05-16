@@ -1,9 +1,9 @@
 import { Box, Group } from '@mantine/core';
 import { NavLink } from 'react-router-dom';
-import { DownIc, Logo } from '../assets';
-import CButton from './buttons/CButton';
+import { DownIc, Logo } from '../../../assets';
 import './navbar.scss';
 import { memo, useCallback, useEffect, useRef, useState } from 'react';
+import CButton from '@components/buttons/CButton';
 
 const NavBar = () => {
   const [navHeight, setNavHeight] = useState(0);
@@ -38,15 +38,10 @@ const NavBar = () => {
       {/* <div style={{ paddingTop: `calc((${navHeight} / 1440) * 100vw)` }} /> */}
       <Box
         ref={navRef}
-        className='nav-bar'
-        style={{
-          transform: showNav ? 'translateY(0)' : 'translateY(-101%)',
-          position: 'fixed',
-          top: 0,
-          width: '100%',
-          zIndex: 999,
-          transition: 'transform 0.3s ease',
-        }}
+        // style={{
+        //   transform: showNav ? 'translateY(0)' : 'translateY(-100%)',
+        // }}
+        className={` ${showNav ? 'nav-bar' : 'nav-bar-on-scroll'}`}
       >
         <img src={Logo} alt='Logo' className='nav-logo' />
 
