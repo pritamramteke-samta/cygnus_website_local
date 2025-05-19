@@ -42,7 +42,7 @@ const StatBox = ({
 
 const StatsSection = () => {
   return (
-    <Box bg='#FFF9F0' py={64}>
+    <Box bg='white' py={6}>
       <Container size='xl'>
         <Grid gutter={40} align='start'>
           {/* Left Text Section */}
