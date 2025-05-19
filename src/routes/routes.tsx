@@ -3,7 +3,9 @@ import RoutePaths from './routePaths';
 import Layout from '@layout/AppLayout';
 import {
   AboutUs,
+  Career,
   Home,
+  Industries,
   NotFound,
   Products,
   Resources,
@@ -18,6 +20,8 @@ const AppRouter = () => (
       <Route path={RoutePaths.services} element={<Services />} />
       <Route path={RoutePaths.aboutus} element={<AboutUs />} />
       <Route path={RoutePaths.resources} element={<Resources />} />
+      <Route path={RoutePaths.career} element={<Career />} />
+      <Route path={RoutePaths.industries} element={<Industries />} />
       <Route path={RoutePaths.nowhere} element={<NotFound />} />
     </Routes>
   </Layout>

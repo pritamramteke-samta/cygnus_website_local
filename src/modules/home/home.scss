@@ -1,4 +1,4 @@
-@use '../../styles/helpers/functions' as fn;
+@use '@styles/helpers/functions' as fn;
 
 .sm-txt-1 {
   font-size: fn.scale-px(16);
@@ -7,15 +7,33 @@
 .sm-txt-2 {
   font-size: fn.scale-px(18);
   color: var(--mantine-color-white-0);
-  font-family: 'Inter', sans-serif;
+}
+
+.sm-txt-2-center {
+  @extend .sm-txt-2;
+  text-align: center;
+  line-height: fn.scale-px(25.2);
 }
 
 .big-txt-1 {
   font-size: fn.scale-px(64);
   color: var(--mantine-color-white-0);
   font-weight: 600;
-  font-family: 'Manrope', sans-serif;
   line-height: fn.scale-px(70.4);
+}
+
+.big-txt-2 {
+  font-size: fn.scale-px(40);
+  color: var(--mantine-color-white-0);
+  font-weight: 600;
+  line-height: fn.scale-px(48);
+  vertical-align: top;
+}
+
+.big-txt-2-center {
+  @extend .big-txt-2;
+  text-align: center;
+  margin-bottom: fn.scale-px(24);
 }
 
 .btn-cont {
@@ -23,6 +41,7 @@
   margin-top: fn.scale-px(32);
   flex-direction: row;
   gap: fn.scale-px(10);
+  // background-color: aqua;
 }
 
 /* Carousel */
@@ -46,7 +65,7 @@
   z-index: 200;
   width: fn.scale-px(92);
   height: fn.scale-px(4);
-  top: fn.scale-px(600);
+  top: fn.scale-px(684);
   left: fn.scale-px(100);
   display: flex;
   gap: fn.scale-px(6);
@@ -61,7 +80,7 @@
 
 .hero-sec-1 {
   position: absolute;
-  top: fn.scale-px(183);
+  top: fn.scale-px(314);
   left: fn.scale-px(100);
   right: fn.scale-px(100);
   z-index: 10; /* or higher */
@@ -128,7 +147,6 @@
 }
 
 .btm-tab-title {
-  font-family: 'Manrope', sans-serif;
   font-weight: 700;
   color: var(--mantine-color-black-0);
   font-size: fn.scale-px(20);
@@ -164,4 +182,16 @@
   pointer-events: none; // allows interaction with video controls if needed
   z-index: 2;
   border-radius: 0 0 fn.scale-px(24) fn.scale-px(24);
+}
+
+.hero-bottom-cont {
+  padding: fn.scale-px(75) 0 fn.scale-px(64) 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--mantine-color-primary-0);
+  margin-top: fn.scale-px(-30);
+  border-radius: 0 0 fn.scale-px(24) fn.scale-px(24);
+  margin-bottom: fn.scale-px(100);
 }

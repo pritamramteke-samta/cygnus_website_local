@@ -6,7 +6,19 @@ const Contact = lazy(() => import('./contact/Contact'));
 const Products = lazy(() => import('./products/Products'));
 const Resources = lazy(() => import('./resources/Resources'));
 const Services = lazy(() => import('./services/Services'));
+const Career = lazy(() => import('./career/Career'));
+const Industries = lazy(() => import('./industries/Industries'));
 
 const NotFound = lazy(() => import('./error/notFound/NotFound'));
 
-export { Home, Contact, Products, Resources, Services, AboutUs, NotFound };
+export {
+  Home,
+  Contact,
+  Products,
+  Resources,
+  Services,
+  AboutUs,
+  NotFound,
+  Career,
+  Industries,
+};

@@ -1,0 +1,52 @@
+@use '@styles/helpers/functions' as fn;
+
+.stats-cont {
+  background-color: var(--mantine-color-white-0);
+
+  // height: 200px;
+  // width: 100%;
+  display: flex;
+  gap: fn.scale-px(24);
+  padding: 0 fn.scale-px(100) 0 fn.scale-px(100);
+  // margin-bottom: 30px;
+}
+
+.stats-box {
+  width: fn.scale-px(292);
+  padding: 0 fn.scale-px(16) 0 fn.scale-px(16);
+  height: fn.scale-px(208);
+  // background-color: rgb(24, 102, 169)
+}
+
+.stats-box-1 {
+  @extend .stats-box;
+  border-left: solid darkcyan fn.scale-px(3);
+}
+
+.stats-titles {
+  display: flex;
+  align-items: baseline;
+  gap: fn.scale-px(8);
+}
+
+.stats-box-title {
+  font-weight: 600;
+  font-size: fn.scale-px(64);
+  line-height: fn.scale-px(69);
+  color: var(--mantine-color-black-0);
+  margin-bottom: fn.scale-px(10);
+  // background-color: aqua;
+}
+
+.stats-box-unit {
+  font-size: fn.scale-px(34);
+  line-height: fn.scale-px(48);
+  color: var(--mantine-color-black-0);
+  // background-color: blue;
+}
+
+.stats-box-desc {
+  font-size: fn.scale-px(16);
+  line-height: fn.scale-px(25);
+  color: var(--mantine-color-black-0);
+}

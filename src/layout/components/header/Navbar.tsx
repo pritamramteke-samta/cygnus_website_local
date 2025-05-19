@@ -38,9 +38,6 @@ const NavBar = () => {
       {/* <div style={{ paddingTop: `calc((${navHeight} / 1440) * 100vw)` }} /> */}
       <Box
         ref={navRef}
-        // style={{
-        //   transform: showNav ? 'translateY(0)' : 'translateY(-100%)',
-        // }}
         className={` ${showNav ? 'nav-bar' : 'nav-bar-on-scroll'}`}
       >
         <img src={Logo} alt='Logo' className='nav-logo' />
@@ -54,25 +51,15 @@ const NavBar = () => {
           >
             Home
           </NavLink>
-          <NavLink
+          {/* <NavLink
             to='/aboutus'
             className={({ isActive }) =>
               isActive ? 'nav-link-active' : 'nav-link'
             }
           >
             About Us
-          </NavLink>
+          </NavLink> */}
 
-          <NavLink
-            to='/services'
-            className={({ isActive }) =>
-              isActive ? 'nav-link-active' : 'nav-link'
-            }
-          >
-            <Group gap={'calc((8 / 1440) * 100vw)'}>
-              Services <img className='nav-btm-arr' src={DownIc} alt='Logo' />
-            </Group>
-          </NavLink>
           <NavLink
             to='/products'
             className={({ isActive }) =>
@@ -85,25 +72,53 @@ const NavBar = () => {
           </NavLink>
 
           <NavLink
+            to='/industries'
+            className={({ isActive }) =>
+              isActive ? 'nav-link-active' : 'nav-link'
+            }
+          >
+            <Group gap={'calc((8 / 1440) * 100vw)'}>
+              Industries <img className='nav-btm-arr' src={DownIc} alt='Logo' />
+            </Group>
+          </NavLink>
+
+          <NavLink
+            to='/services'
+            className={({ isActive }) =>
+              isActive ? 'nav-link-active' : 'nav-link'
+            }
+          >
+            <Group gap={'calc((8 / 1440) * 100vw)'}>
+              Services <img className='nav-btm-arr' src={DownIc} alt='Logo' />
+            </Group>
+          </NavLink>
+
+          <NavLink
             to='/resources'
             className={({ isActive }) =>
               isActive ? 'nav-link-active' : 'nav-link'
             }
           >
-            Resources
+            <Group gap={'calc((8 / 1440) * 100vw)'}>
+              Resources Hub{' '}
+              <img className='nav-btm-arr' src={DownIc} alt='Logo' />
+            </Group>
+          </NavLink>
+
+          <NavLink
+            to='/career'
+            className={({ isActive }) =>
+              isActive ? 'nav-link-active' : 'nav-link'
+            }
+          >
+            Career
           </NavLink>
         </Group>
         <Group gap={'calc((16 / 1440) * 100vw)'}>
           <CButton
-            extraStyles={{
-              borderColor: 'var(--mantine-color-greyLite-0)',
-            }}
-            color={'var(--mantine-color-primaryLite-0)'}
+            color={'var(--mantine-color-secondary-0)'}
             title='Contact us'
-            variant='outline'
           />
-
-          <CButton title='Get a demo' />
         </Group>
       </Box>
     </>

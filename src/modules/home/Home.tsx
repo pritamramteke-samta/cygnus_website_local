@@ -4,22 +4,23 @@ import { useEffect, useRef, useState } from 'react';
 import Autoplay from 'embla-carousel-autoplay';
 import './home.scss';
 import CButton from '../../components/buttons/CButton';
-import { LegalDoc, LegalDocW, TechConsult, TechConsultW } from '../../assets';
+// import { LegalDoc, LegalDocW, TechConsult, TechConsultW } from '../../assets';
 
 import LogoScroller from '../../components/LogoScroller';
-import TrustSection from '../../layout/TrustSection';
+// import TrustSection from '../../layout/TrustSection';
 import ServicesCards from '../../components/Cards/ServicesCards';
 import StackedCards from '../../components/Cards/StackedCards';
 import StatsSection from '../../layout/StatsSection';
 import TestimonialsSection from '../../layout/TestimonialsSection';
 import BlogSection from '../../layout/BlogCard';
 import { carouselData } from './data';
+// import Stats from '@sections/stats/Stats';
 
 const Home = () => {
-  const autoplay = useRef(Autoplay({ delay: 3000 }));
+  const autoplay = useRef(Autoplay({ delay: 5000 }));
   const carouselRef = useRef(null);
-  const [tabHover, settabHover] = useState(false);
-  const [tabHover2, settabHover2] = useState(false);
+  // const [tabHover, settabHover] = useState(false);
+  // const [tabHover2, settabHover2] = useState(false);
   const [activeIndex, setactiveIndex] = useState(0);
 
   useEffect(() => {
@@ -38,7 +39,7 @@ const Home = () => {
           setactiveIndex(slideIndx);
         }}
         emblaOptions={{ loop: true, align: 'start' }}
-        height={'calc((800 / 1440) * 100vw)'}
+        height={'calc((750 / 1440) * 100vw)'}
         slideSize='100%'
         withControls={false}
         plugins={[autoplay.current]}
@@ -53,15 +54,7 @@ const Home = () => {
           <Carousel.Slide key={index}>
             <Box className='carousel-box'>
               <Box className='hero-sec-1'>
-                {/* <div
-                  className={'sm-txt-1'}
-                  style={{ textTransform: 'uppercase' }}
-                >
-                  Highlighted feature
-                </div> */}
-
                 <Box className={'big-txt-1'}>
-                  {/* {slide.title} */}
                   {slide.title.split('|||').map((line, idx) => (
                     <Box key={idx}>{line}</Box>
                   ))}
@@ -74,12 +67,12 @@ const Home = () => {
                 </Box>
 
                 <Box className='btn-cont'>
-                  <CButton
+                  {/* <CButton
                     title='Get a demo'
                     color={'var(--mantine-color-primaryLite-0)'}
-                  />
+                  /> */}
                   <CButton
-                    title='Contact us'
+                    title='Read more'
                     color={'var(--mantine-color-white-0)'}
                     variant='outline'
                     extraStyles={{
@@ -88,7 +81,7 @@ const Home = () => {
                     }}
                   />
                 </Box>
-                <Box className='btm-tabs-cont'>
+                {/* <Box className='btm-tabs-cont'>
                   <Box
                     className='btm-tab-cont-1'
                     onMouseEnter={() => settabHover(true)}
@@ -155,7 +148,7 @@ const Home = () => {
                       </Box>
                     </Box>
                   </Box>
-                </Box>
+                </Box> */}
               </Box>
 
               <video
@@ -173,7 +166,6 @@ const Home = () => {
           </Carousel.Slide>
         ))}
       </Carousel>
-
       <Box className='indicators'>
         {carouselData.map((_, index) => {
           return (
@@ -184,13 +176,31 @@ const Home = () => {
           );
         })}
       </Box>
+
+      <Box className='hero-bottom-cont'>
+        <Box className='big-txt-2-center'>
+          In a world of shifting regulations and rising complexity,
+          <br />
+          Cygnus Compliance is the calm you can trust
+        </Box>
+        <Box className='sm-txt-2-center'>
+          We help financial entities enhance compliance, reduce risk, and
+          achieve operational excellence by delivering end-to-end
+          <br />
+          regulatory consulting and technology services
+        </Box>
+      </Box>
+
       {/* <div style={{ backgroundColor: '#ffffff', height: '40vh' }} /> */}
-      <LogoScroller />
-      <TrustSection />
-      <ServicesCards />
-      <StackedCards />
+
+      {/* <Stats/> */}
 
       <StatsSection />
+      <StackedCards />
+      <ServicesCards />
+      <LogoScroller />
+      {/* <TrustSection /> */}
+
       <TestimonialsSection />
       <BlogSection />
     </Container>
