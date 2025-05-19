@@ -28,13 +28,13 @@ const TrustSection = () => {
   return (
     <Box
       py={64}
-      style={{
-        background: `
-          radial-gradient(circle at 15% 30%, #DFFFEF 5%, transparent 25%),
-          radial-gradient(circle at 95% 30%, #FFD6C2 0%, transparent 20%),
-          #ffffff
-        `,
-      }}
+      // style={{
+      //   background: `
+      //     radial-gradient(circle at 15% 30%, #DFFFEF 5%, transparent 25%),
+      //     radial-gradient(circle at 95% 30%, #FFD6C2 0%, transparent 20%),
+      //     #ffffff
+      //   `,
+      // }}
     >
       <Container size='md'>
         <Center>

@@ -22,7 +22,7 @@ const services = [
   {
     title: 'Advanced Techniques for Model Tuning',
     image: ServiceCard,
-    bg: 'linear-gradient(180deg, #d46a2b 0%, #c55e1f 100%)',
+    bg: 'linear-gradient(180deg, #00472F 0%, #00472F 100%)',
   },
 ];
 

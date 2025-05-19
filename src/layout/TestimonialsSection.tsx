@@ -78,13 +78,13 @@ const TestimonialsSection = () => {
   return (
     <Box
       py={64}
-      style={{
-        background: `
-      radial-gradient(circle at 35% 60%, #91F5D3 -30%, transparent 25%),
-      radial-gradient(circle at 95% 60%, #FF814399 -10%, transparent 15%),
-      #fffefc
-    `,
-      }}
+      //   style={{
+      //     background: `
+      //   radial-gradient(circle at 35% 60%, #91F5D3 -30%, transparent 25%),
+      //   radial-gradient(circle at 95% 60%, #FF814399 -10%, transparent 15%),
+      //   #fffefc
+      // `,
+      //   }}
     >
       <Container size={'lg'}>
         <Center mb='xs'>
