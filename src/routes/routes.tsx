@@ -1,22 +1,28 @@
 import { Routes, Route } from 'react-router-dom';
-import Home from '../pages/home/Home';
-import Navbar from '../components/Navbar';
-import Layout from '../layout/Layout';
-import Products from '../pages/products/Products';
-import Services from '../pages/services/Services';
-import AboutUs from '../pages/aboutUs/AboutUs';
-import Resources from '../pages/resources/Resources';
+import RoutePaths from './routePaths';
+import Layout from '@layout/AppLayout';
+import {
+  AboutUs,
+  Career,
+  Home,
+  Industries,
+  NotFound,
+  Products,
+  Resources,
+  Services,
+} from '@modules/index';
 
 const AppRouter = () => (
   <Layout>
-    <Navbar />
-
     <Routes>
-      <Route path='/' element={<Home />} />
-      <Route path='/products' element={<Products />} />
-      <Route path='/services' element={<Services />} />
-      <Route path='/aboutus' element={<AboutUs />} />
-      <Route path='/resources' element={<Resources />} />
+      <Route path={RoutePaths.home} element={<Home />} />
+      <Route path={RoutePaths.products} element={<Products />} />
+      <Route path={RoutePaths.services} element={<Services />} />
+      <Route path={RoutePaths.aboutus} element={<AboutUs />} />
+      <Route path={RoutePaths.resources} element={<Resources />} />
+      <Route path={RoutePaths.career} element={<Career />} />
+      <Route path={RoutePaths.industries} element={<Industries />} />
+      <Route path={RoutePaths.nowhere} element={<NotFound />} />
     </Routes>
   </Layout>
 );

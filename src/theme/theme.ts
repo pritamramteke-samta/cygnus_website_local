@@ -14,8 +14,8 @@ const theme = createTheme({
     grey: colorsTuple('#4D525F'),
   },
 
-  fontFamily: 'Inter, sans-serif',
-  fontFamilyMonospace: 'Inter, monospace',
+  fontFamily: 'Manrope, sans-serif',
+  fontFamilyMonospace: 'Manrope, monospace',
 });
 
 export default theme;

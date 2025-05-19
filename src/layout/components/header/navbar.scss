@@ -1,0 +1,68 @@
+// @use '../styles/helpers/functions' as fn;
+
+@use '@styles/helpers/functions' as fn;
+
+.nav-bar {
+  background-color: var(--mantine-color-white-0);
+  // background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  // padding: fn.scale-px(16);
+  padding: fn.scale-px(10) fn.scale-px(100) fn.scale-px(10) fn.scale-px(100);
+  box-shadow: 0 fn.scale-px(2) fn.scale-px(4) fn.scale-px(-1) rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  transition: transform 0.3s ease;
+  transform: translateY(0);
+}
+
+.nav-bar-on-scroll {
+  @extend .nav-bar;
+  transform: translateY(-101%);
+}
+
+.nav-logo {
+  // width: fn.scale-px(157);
+  // height: fn.scale-px(40);
+  width: fn.scale-px(189);
+  height: fn.scale-px(48);
+}
+
+.nav-btm-arr {
+  width: fn.scale-px(16);
+  height: fn.scale-px(16);
+}
+
+.nav-link-cont {
+  // padding: 0 fn.scale-px(8);
+  height: fn.scale-px(50);
+  // background-color: aqua;
+}
+
+.nav-link {
+  color: var(--mantine-color-black-0);
+  font-size: fn.scale-px(14);
+  font-weight: 400;
+  text-decoration: none;
+  height: 100%;
+  padding: fn.scale-px(16) 0 fn.scale-px(16) 0;
+  // background-color: red;
+  border-bottom: fn.scale-px(3) solid rgba(0, 0, 0, 0);
+}
+
+.nav-link-active {
+  @extend .nav-link;
+  font-weight: 600;
+
+  border-bottom: fn.scale-px(3) solid var(--mantine-color-secondary-0);
+}
+
+.btn-cont {
+  display: flex;
+  flex-direction: row;
+  gap: fn.scale-px(10);
+}
