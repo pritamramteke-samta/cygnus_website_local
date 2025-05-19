@@ -52,7 +52,7 @@ const TestimonialCard = ({
   image,
 }: (typeof testimonials)[0]) => (
   <Paper shadow='md' radius='8px' p='xl' withBorder style={{ minHeight: 280 }}>
-    <Group spacing={4} mb='sm'>
+    <Group mb='sm'>
       {stars.map((_, i) => (
         <IconStarFilled key={i} size={16} color='#F59E0B' />
       ))}
@@ -92,16 +92,16 @@ const TestimonialsSection = () => {
             2,157 people have said how good Cygnus
           </Text>
         </Center>
-        <Title align='center' order={2} mb='xl'>
+        <Title order={2} mb='xl'>
           Our happy clients say about us
         </Title>
 
         <Carousel
           slideSize={{ base: '100%', sm: '50%', md: '33.3333%' }}
           slideGap='xl'
-          align='start'
+          // align='start'
           withIndicators
-          loop
+          // loop
           draggable
           plugins={[Autoplay({ delay: 5000 })]}
           styles={{

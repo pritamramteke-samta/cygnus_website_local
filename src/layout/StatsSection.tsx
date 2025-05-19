@@ -1,4 +1,3 @@
-import React from 'react';
 import { Box, Grid, Text, Title, Button, Container } from '@mantine/core';
 
 const StatBox = ({

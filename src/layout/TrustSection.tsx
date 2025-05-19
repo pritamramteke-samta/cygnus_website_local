@@ -15,7 +15,7 @@ import vector2 from '../assets/images/vector2.png';
 import vector3 from '../assets/images/vector3.png';
 
 const StarRating = () => (
-  <Group spacing={4} position='center' mb='sm'>
+  <Group mb='sm'>
     <IconStarFilled size={20} color='#F59E0B' />
     <IconStarFilled size={20} color='#F59E0B' />
     <IconStarFilled size={20} color='#F59E0B' />
