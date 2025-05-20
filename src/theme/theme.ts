@@ -7,6 +7,7 @@ const theme = createTheme({
     primary: colorsTuple('#27624E'),
     primaryLite: colorsTuple('#008F5E'),
     primaryExtraLight: colorsTuple('#59D39F'),
+    primaryTooLight: colorsTuple('#EEFEF8'),
     black: colorsTuple('#000000'),
     white: colorsTuple('#ffffff'),
     secondary: colorsTuple('#E36F34'),

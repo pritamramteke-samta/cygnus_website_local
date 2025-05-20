@@ -1,13 +1,13 @@
 @use '@styles/helpers/functions' as fn;
 
 .footer {
-  background-color: var(--mantine-color-primary-0);
+  background-color: var(--mantine-color-primaryTooLight-0);
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: fn.scale-px(79) fn.scale-px(100) fn.scale-px(27) fn.scale-px(100);
+  padding: fn.scale-px(52) fn.scale-px(100) fn.scale-px(44) fn.scale-px(100);
 }
 
 .accordion-title {
@@ -122,20 +122,31 @@
 }
 
 .footer-menu-cont {
-  padding-top: fn.scale-px(24);
-  padding-bottom: fn.scale-px(24);
+  // padding-top: fn.scale-px(24);
+  // padding-bottom: fn.scale-px(24);
   margin-bottom: fn.scale-px(40);
 }
 
 .footer-logo {
-  width: fn.scale-px(201);
-  height: fn.scale-px(40);
+  width: fn.scale-px(189);
+  height: fn.scale-px(48);
   margin-bottom: fn.scale-px(16);
 }
 .footer-logo-para {
   font-size: fn.scale-px(16);
   line-height: 150%;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(0, 0, 0, 0.8);
+  margin-bottom: fn.scale-px(60);
+}
+
+.social-links-cont {
+  display: flex;
+  gap: fn.scale-px(12);
+}
+
+.social-links-logo {
+  height: fn.scale-px(24);
+  width: fn.scale-px(24);
 }
 
 .footer-menu-head {
@@ -143,7 +154,7 @@
   font-size: fn.scale-px(20);
   font-weight: 700;
   line-height: 120%;
-  color: var(--mantine-color-white-0);
+  color: var(--mantine-color-primary-0);
   margin-bottom: fn.scale-px(16);
 }
 
@@ -151,7 +162,8 @@
   font-family: 'Manrope', sans-serif;
   font-size: fn.scale-px(16);
   line-height: 150%;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(0, 0, 0, 0.8);
+  margin-bottom: fn.scale-px(12);
 }
 
 .footer-menu-txt:hover {

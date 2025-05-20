@@ -1,5 +1,4 @@
-import { FooterLogo } from '@assets/index';
-import CButton from '@components/buttons/CButton';
+import { Logo } from '@assets/index';
 import { Box, Grid } from '@mantine/core';
 import './footer.scss';
 import FooterLinks from './sections/FooterLinks';
@@ -8,12 +7,13 @@ import {
   footerlinksData2,
   footerlinksData3,
   footerlinksData4,
+  socialLinksData,
 } from './data/footerLinks';
 
 const Footer = () => {
   return (
     <Box className='footer'>
-      <Box className='newslater-cont'>
+      {/* <Box className='newslater-cont'>
         <Box className='newslater-cont-title'>
           Supercharge Your Success with Our 100% Guarantee
         </Box>
@@ -43,16 +43,32 @@ const Footer = () => {
             }}
           />
         </Box>
-      </Box>
+      </Box> */}
 
       <Grid w={'100%'} className='footer-menu-cont'>
         <Grid.Col span={4}>
-          <img src={FooterLogo} className='footer-logo' />
+          <img src={Logo} className='footer-logo' />
           <Box className='footer-logo-para'>
-            Monks Pay offers secure, seamless, and
-            <br />
-            fee-free payments for effortless global
-            <br /> transactions.
+            In a world of shifting regulations and rising complexity, Cygnus
+            Compliance is the calm you can trust
+          </Box>
+
+          <Box className='social-links-cont'>
+            {socialLinksData.map((slink) => {
+              return (
+                <a
+                  href={slink.linkUrl}
+                  target={slink.target}
+                  rel='noopener noreferrer'
+                >
+                  <img
+                    src={slink.imgPath}
+                    className='social-links-logo'
+                    alt={slink.alt}
+                  />
+                </a>
+              );
+            })}
           </Box>
         </Grid.Col>
 
@@ -65,11 +81,12 @@ const Footer = () => {
       <Box className='footer-br' />
       <Box className='footer-end-cont'>
         <Box className='footer-end-left-cont'>
-          <Box className='footer-menu-txt'>Built in Framer</Box>
+          <Box className='footer-menu-txt'>Privacy Policy</Box>
           <Box className='footer-menu-txt'>Terms and Conditions</Box>
+          <Box className='footer-menu-txt'>Cookie Policy</Box>
         </Box>
         <Box className='footer-menu-txt'>
-          {new Date().getFullYear()} © Design Monks. All rights reserved.
+          {new Date().getFullYear()} © Cygnus. All rights reserved.
         </Box>
       </Box>
     </Box>

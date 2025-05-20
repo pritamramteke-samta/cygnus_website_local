@@ -1,6 +1,11 @@
 export { default as Logo } from './images/Logo.png';
 export { default as FooterLogo } from './images/FooterLogo.png';
 export { default as DownIc } from './images/icons/DownIc.png';
+export { default as Facebook } from './images/icons/Facebook.png';
+export { default as Instagram } from './images/icons/Instagram.png';
+export { default as LinkedIn } from './images/icons/LinkedIn.png';
+export { default as X } from './images/icons/X.png';
+export { default as Youtube } from './images/icons/Youtube.png';
 export { default as LegalDoc } from './images/LegalDoc.svg';
 export { default as TechConsult } from './images/TechConsult.svg';
 export { default as LegalDocW } from './images/LegalDocW.svg';

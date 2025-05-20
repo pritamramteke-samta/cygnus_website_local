@@ -5,6 +5,8 @@ import Autoplay from 'embla-carousel-autoplay';
 import './home.scss';
 import CButton from '../../components/buttons/CButton';
 // import { LegalDoc, LegalDocW, TechConsult, TechConsultW } from '../../assets';
+import { carouselData } from './data';
+// import Stats from '@sections/stats/Stats';
 
 import LogoScroller from '../../components/LogoScroller';
 // import TrustSection from '../../layout/TrustSection';
@@ -13,7 +15,8 @@ import StackedCards from '../../components/Cards/StackedCards';
 import StatsSection from '../../layout/StatsSection';
 import TestimonialsSection from '../../layout/TestimonialsSection';
 import BlogSection from '../../layout/BlogCard';
-import { carouselData } from './data';
+
+// import Stats2 from '@sections/stats/Stats2';
 // import Stats from '@sections/stats/Stats';
 
 const Home = () => {
@@ -194,6 +197,8 @@ const Home = () => {
       {/* <div style={{ backgroundColor: '#ffffff', height: '40vh' }} /> */}
 
       {/* <Stats/> */}
+
+      {/* <Stats2/> */}
 
       <StatsSection />
       <StackedCards />

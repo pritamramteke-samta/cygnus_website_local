@@ -1,3 +1,4 @@
+import { Facebook, Instagram, LinkedIn, X, Youtube } from '@assets/index';
 import RoutePaths from '@routes/routePaths';
 
 const footerlinksData1 = [
@@ -6,89 +7,121 @@ const footerlinksData1 = [
     link: '',
   },
   {
-    name: 'Features',
-    link: RoutePaths.home,
-  },
-  {
-    name: 'How it works',
+    name: 'Regulatory Risk Compliance',
     link: RoutePaths.aboutus,
   },
   {
-    name: 'Security',
-    link: RoutePaths.products,
+    name: 'Third Party Risk',
+    link: RoutePaths.home,
   },
   {
-    name: 'Testimonial',
-    link: RoutePaths.services,
+    name: 'Cyber Security',
+    link: RoutePaths.aboutus,
+  },
+  {
+    name: 'Technology Consulting',
+    link: RoutePaths.products,
   },
 ];
 
 const footerlinksData2 = [
   {
-    name: 'Services',
+    name: 'Products',
     link: '',
   },
   {
-    name: 'Features',
-    link: RoutePaths.home,
-  },
-  {
-    name: 'How it works',
-    link: RoutePaths.aboutus,
-  },
-  {
-    name: 'Security',
+    name: 'Open Compliance Suite',
     link: RoutePaths.products,
-  },
-  {
-    name: 'Testimonial',
-    link: RoutePaths.services,
   },
 ];
 
 const footerlinksData3 = [
   {
-    name: 'Services',
+    name: 'Industries',
     link: '',
   },
   {
-    name: 'Features',
+    name: 'FI',
     link: RoutePaths.home,
   },
   {
-    name: 'How it works',
+    name: 'FinTechs',
+    link: RoutePaths.home,
+  },
+  {
+    name: 'Insurance',
     link: RoutePaths.aboutus,
   },
   {
-    name: 'Security',
+    name: 'Cryptos',
     link: RoutePaths.products,
-  },
-  {
-    name: 'Testimonial',
-    link: RoutePaths.services,
   },
 ];
 
 const footerlinksData4 = [
   {
-    name: 'Services',
+    name: 'Company',
     link: '',
   },
   {
-    name: 'Features',
+    name: 'About us',
+    link: '',
+  },
+  {
+    name: 'Resources Hub',
     link: RoutePaths.home,
   },
   {
-    name: 'How it works',
+    name: 'Recent Insight',
     link: RoutePaths.aboutus,
   },
   {
-    name: 'Security',
+    name: 'Careers',
     link: RoutePaths.products,
   },
+];
+
+//  <a
+//             href="https://www.facebook.com"
+//             target="_blank"
+//             rel="noopener noreferrer">
+//               <img
+//               src={Facebook}
+//               className='social-links-logo'
+//               alt="Facebook"
+//               />
+//               </a>
+
+const socialLinksData = [
   {
-    name: 'Testimonial',
-    link: RoutePaths.services,
+    linkUrl: 'https://www.facebook.com',
+    target: '_blank',
+    imgPath: Facebook,
+    alt: 'Facebook',
+  },
+  {
+    linkUrl: 'https://www.instagram.com',
+    target: '_blank',
+    imgPath: Instagram,
+    alt: 'Instagram',
+  },
+  {
+    linkUrl: 'https://twitter.com', // or https://x.com if preferred
+    target: '_blank',
+    imgPath: X, // or XLogo if using an "X" logo
+    alt: 'Twitter (X)',
+  },
+  {
+    linkUrl: 'https://www.linkedin.com',
+    target: '_blank',
+    imgPath: LinkedIn,
+    alt: 'LinkedIn',
+  },
+  {
+    linkUrl: 'https://www.youtube.com',
+    target: '_blank',
+    imgPath: Youtube,
+    alt: 'YouTube',
   },
 ];
 
@@ -97,4 +130,5 @@ export {
   footerlinksData2,
   footerlinksData3,
   footerlinksData4,
+  socialLinksData,
 };

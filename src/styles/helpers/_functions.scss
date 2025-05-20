@@ -1,6 +1,6 @@
 // _functions.scss
-@function scale-px($px, $design-width: 1440) {
-  @return calc(($px / $design-width) * 100vw);
+@function scale-px($px, $sclFac: 1, $design-width: 1440) {
+  @return calc(($px / $design-width) * $sclFac * 100vw);
 }
 
 // Function to darken a color by a given percentage
